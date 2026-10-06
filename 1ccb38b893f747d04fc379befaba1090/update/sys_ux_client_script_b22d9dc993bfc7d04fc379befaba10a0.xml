@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Stopwatch Home default">1cbd1538933f47d04fc379befaba103d</macroponent>
+        <name>Reset Stopwatch</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[function handler({api, event, helpers, imports}) {
+
+    const intervalId = api.state.intervalId;
+
+    // Stop the running timer
+    if (intervalId !== -1) {
+        helpers.timing.clearInterval(intervalId);
+    }
+
+    // Reset stopwatch display
+    api.setState('elapsedTime', '00:00:00.000');
+
+    // Reset timer state
+    api.setState('intervalId', -1);
+    api.setState('isRunning', false);
+    api.setState('isPaused', false);
+
+    // Clear all recorded laps
+    api.setState('lapTimes', []);
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-06 10:40:21</sys_created_on>
+        <sys_id>b22d9dc993bfc7d04fc379befaba10a0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Reset Stopwatch</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_client_script_b22d9dc993bfc7d04fc379befaba10a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-06 11:23:04</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>
