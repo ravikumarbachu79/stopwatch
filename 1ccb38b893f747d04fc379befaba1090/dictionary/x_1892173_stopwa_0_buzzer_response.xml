@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="5f87b55d93b78bd04fc379befaba106d" label="Buzzer Response" max_length="40" name="x_1892173_stopwa_0_buzzer_response" type="collection">
+        <element label="Run Number" max_length="40" name="run_number" type="integer"/>
+        <element label="Quiz Session" max_length="32" name="quiz_session" reference="x_1892173_stopwa_0_quiz_session" type="reference"/>
+        <element label="Participant" max_length="32" name="participant" reference="x_1892173_stopwa_0_participant" type="reference"/>
+        <element label="Buzzer Time" max_length="40" name="buzzer_time" type="glide_date_time"/>
+        <element label="Response Time" max_length="38" name="response_time" type="decimal"/>
+        <index name="index">
+            <element name="participant"/>
+        </index>
+        <index name="index2">
+            <element name="quiz_session"/>
+        </index>
+    </element>
+</database>

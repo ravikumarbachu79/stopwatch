@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="DELETE">
+        <description/>
+        <event_name>PARTICIPANT_CREATED</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>PARTICIPANT_CREATED</label>
+        <props>[
+    {
+        "fieldType": "string",
+        "id": "J47wgnPySCE6T9ToFqFffE6Ce",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "participantId",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    },
+    {
+        "fieldType": "string",
+        "id": "e5gNg476JD0Qp9iwM43fy8VJVD",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "code",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    }
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 11:40:04</sys_created_on>
+        <sys_id>059b4bdd93b3cbd04fc379befaba104d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>PARTICIPANT_CREATED</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_event_059b4bdd93b3cbd04fc379befaba104d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 12:44:28</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="DELETE" query="documentkey=059b4bdd93b3cbd04fc379befaba104d"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</application>
+        <file_path/>
+        <instance_id>98a10779eb590f50c040fddacad0cda4</instance_id>
+        <instance_name>dev400049</instance_name>
+        <name>sys_ux_event_059b4bdd93b3cbd04fc379befaba104d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event"><sys_ux_event action="INSERT_OR_UPDATE"><description/><event_name>PARTICIPANT_CREATED</event_name><explicit_api_name/><interfaces/><label>PARTICIPANT_CREATED</label><props>[
+    {
+        "fieldType": "string",
+        "id": "J47wgnPySCE6T9ToFqFffE6Ce",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "participantId",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    },
+    {
+        "fieldType": "string",
+        "id": "e5gNg476JD0Qp9iwM43fy8VJVD",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "code",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    }
+]</props><required_translations/><schema_version>1.0.0</schema_version><sys_class_name>sys_ux_event</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-07 11:40:04</sys_created_on><sys_id>059b4bdd93b3cbd04fc379befaba104d</sys_id><sys_mod_count>3</sys_mod_count><sys_name>PARTICIPANT_CREATED</sys_name><sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package><sys_policy/><sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope><sys_update_name>sys_ux_event_059b4bdd93b3cbd04fc379befaba104d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-07 12:44:28</sys_updated_on></sys_ux_event><sys_translated_text action="delete_multiple" query="documentkey=059b4bdd93b3cbd04fc379befaba104d"/></record_update>]]></payload>
+        <payload_hash>-717466119</payload_hash>
+        <record_name>PARTICIPANT_CREATED</record_name>
+        <reverted_from/>
+        <source>dd2cc13093bb47d04fc379befaba1075</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 12:44:28</sys_created_on>
+        <sys_id>f641ef1193b7cbd04fc379befaba10df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a11664d33c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 12:44:28</sys_updated_on>
+        <type>UX Event</type>
+        <update_guid>3641ef113db7cbd01c872cc2307948de</update_guid>
+        <update_guid_history>3641ef113db7cbd01c872cc2307948de:-717466119,3701a79d3d77cbd0f9021c522bf9b264:750714755,d524d7dd39f3cbd0c9cdb6245ce6cce7:-1148787511,938253ddc1f3cbd0ed482af96f4d32f1:-778610985</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 12:49:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_event">sys_ux_event</sys_db_object>
+        <sys_id>c595e530b37a440c943127ab4eb83b79</sys_id>
+        <sys_metadata>059b4bdd93b3cbd04fc379befaba104d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PARTICIPANT_CREATED</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_scope_delete display_value="">13b1f873bcaa449e827dfd3b54d19dc9</sys_scope_delete>
+        <sys_update_name>sys_ux_event_059b4bdd93b3cbd04fc379befaba104d</sys_update_name>
+        <sys_update_version display_value="sys_ux_event_059b4bdd93b3cbd04fc379befaba104d">f641ef1193b7cbd04fc379befaba10df</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 12:49:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

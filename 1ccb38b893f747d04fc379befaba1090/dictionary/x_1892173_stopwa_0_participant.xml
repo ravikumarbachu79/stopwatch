@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="a2e5795993b78bd04fc379befaba106d" label="Participant" max_length="40" name="x_1892173_stopwa_0_participant" type="collection">
+        <element label="Quiz Session" max_length="32" name="quiz_session" reference="x_1892173_stopwa_0_quiz_session" type="reference"/>
+        <element label="Email" max_length="255" name="email" type="string"/>
+        <element display="true" label="Name" max_length="100" name="name" type="string"/>
+        <index name="index">
+            <element name="quiz_session"/>
+        </index>
+    </element>
+</database>
