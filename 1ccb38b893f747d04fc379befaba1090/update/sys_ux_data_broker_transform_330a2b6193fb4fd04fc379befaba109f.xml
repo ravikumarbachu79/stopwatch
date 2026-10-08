@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_1892173_stopwa_0.QuizPulse - Create Buzzer Response</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description>Creates a Buzzer Response when a participant presses the buzzer.</description>
+        <mutates_server_data>true</mutates_server_data>
+        <name>QuizPulse - Create Buzzer Response</name>
+        <output_schema/>
+        <private>false</private>
+        <props>[&#13;
+  {&#13;
+    "name": "quizSessionId",&#13;
+    "label": "Quiz Session ID",&#13;
+    "description": "Quiz Session sys_id",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": ""&#13;
+  },&#13;
+  {&#13;
+    "name": "participantId",&#13;
+    "label": "Participant ID",&#13;
+    "description": "Participant sys_id",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": ""&#13;
+  },&#13;
+  {&#13;
+    "name": "buzzerTime",&#13;
+    "label": "Buzzer Time",&#13;
+    "description": "Timestamp when the participant pressed the buzzer",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": ""&#13;
+  },&#13;
+  {&#13;
+    "name": "runNumber",&#13;
+    "label": "Run Number",&#13;
+    "description": "Current quiz run number",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": "1"&#13;
+  }&#13;
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+
+    if (!input || !input.quizSessionId || !input.participantId || !input.buzzerTime) {
+        return {
+            success: false,
+            message: "Missing required buzzer response input."
+        };
+    }
+
+    // Get the Quiz Session
+    var session = new GlideRecord("x_1892173_stopwa_0_quiz_session");
+
+    if (!session.get(input.quizSessionId)) {
+        return {
+            success: false,
+            message: "Quiz Session not found."
+        };
+    }
+
+    // Get the server-side Run Start Time
+    var runStartValue = session.getValue("run_start_time");
+
+    if (!runStartValue) {
+        return {
+            success: false,
+            message: "Run Start Time is empty."
+        };
+    }
+
+    // Convert the server Run Start Time to GlideDateTime
+    var runStart = new GlideDateTime(runStartValue);
+
+    // Convert browser epoch milliseconds to GlideDateTime
+    var buzzerEpoch = parseInt(input.buzzerTime, 10);
+
+    if (isNaN(buzzerEpoch)) {
+        return {
+            success: false,
+            message: "Invalid Buzzer Time."
+        };
+    }
+
+    var buzzer = new GlideDateTime();
+    buzzer.setNumericValue(buzzerEpoch);
+
+    // Calculate response time in seconds
+    var responseTime =
+        (buzzer.getNumericValue() - runStart.getNumericValue()) / 1000;
+
+    // Prevent negative response times
+    if (responseTime < 0) {
+        responseTime = 0;
+    }
+
+    // Create Buzzer Response
+    var response = new GlideRecord(
+        "x_1892173_stopwa_0_buzzer_response"
+    );
+
+    response.initialize();
+
+    response.setValue(
+        "quiz_session",
+        input.quizSessionId
+    );
+
+    response.setValue(
+        "participant",
+        input.participantId
+    );
+
+    // Store the correctly converted Date/Time
+    response.setValue(
+        "buzzer_time",
+        buzzer.getValue()
+    );
+
+    // Store response time in seconds with millisecond precision
+    response.setValue(
+        "response_time",
+        responseTime.toFixed(3)
+    );
+
+    response.setValue(
+        "run_number",
+        parseInt(input.runNumber, 10) || 1
+    );
+
+    var sysId = response.insert();
+
+    return {
+        success: !!sysId,
+        sys_id: sysId || "",
+        buzzerTime: buzzer.getValue(),
+        responseTime: responseTime.toFixed(3)
+    };
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-08 08:04:25</sys_created_on>
+        <sys_id>330a2b6193fb4fd04fc379befaba109f</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>QuizPulse - Create Buzzer Response</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_330a2b6193fb4fd04fc379befaba109f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-08 11:05:13</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=330a2b6193fb4fd04fc379befaba109f"/>
+</record_update>

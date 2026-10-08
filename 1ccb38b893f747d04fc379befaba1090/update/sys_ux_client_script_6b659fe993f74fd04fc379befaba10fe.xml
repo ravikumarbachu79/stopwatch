@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Participant Buzzer default">372c76999333cbd04fc379befaba1008</macroponent>
+        <name>Capture Buzzer Time</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[function handler({api, event, helpers, imports}) {
+
+    // Capture the exact moment BUZZ is pressed.
+    // Epoch milliseconds are timezone-independent.
+    var buzzerTime = Date.now();
+
+    console.log("=================================");
+    console.log("QUIZPULSE BUZZ PRESSED");
+    console.log("Buzzer Time (epoch ms):", buzzerTime);
+    console.log("Buzzer Time (local):", new Date(buzzerTime).toString());
+    console.log("=================================");
+
+    // Store timestamp in client state
+    api.setState("buzzerTime", String(buzzerTime));
+
+    // Get current Quiz Session
+    var sessionResults =
+        api.data.look_up_multiple_records_2.results;
+
+    // Get current Participant
+    var participantResults =
+        api.data.look_up_multiple_records_1.results;
+
+    // Validate Quiz Session
+    if (!sessionResults || sessionResults.length === 0) {
+        console.error("QuizPulse: Quiz Session not found.");
+        return;
+    }
+
+    // Validate Participant
+    if (!participantResults || participantResults.length === 0) {
+        console.error("QuizPulse: Participant not found.");
+        return;
+    }
+
+    // Get Quiz Session sys_id
+    var quizSessionId =
+        sessionResults[0]._row_data.uniqueValue;
+
+    // Get Participant sys_id
+    var participantId =
+        participantResults[0]._row_data.uniqueValue;
+
+    console.log("Quiz Session ID:", quizSessionId);
+    console.log("Participant ID:", participantId);
+
+    // Execute the Transform Data Resource
+    api.data.quizpulse___create_buzzer_response_1.execute({
+        quizSessionId: quizSessionId,
+        participantId: participantId,
+        buzzerTime: String(buzzerTime),
+        runNumber: "1"
+    });
+
+    console.log("QuizPulse: Buzzer Response Transform executed.");
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-08 06:54:50</sys_created_on>
+        <sys_id>6b659fe993f74fd04fc379befaba10fe</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Capture Buzzer Time</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_client_script_6b659fe993f74fd04fc379befaba10fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-08 11:03:34</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>
