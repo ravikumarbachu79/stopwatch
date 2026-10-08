@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_1892173_stopwa_0.QuizPulse - Get Leaderboard</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description/>
+        <mutates_server_data>false</mutates_server_data>
+        <name>QuizPulse - Get Leaderboard</name>
+        <output_schema/>
+        <private>false</private>
+        <props>[&#13;
+  {&#13;
+    "name": "quizSessionId",&#13;
+    "label": "Quiz Session ID",&#13;
+    "description": "Quiz Session sys_id",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": ""&#13;
+  }&#13;
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+
+    var leaderboard = [];
+
+    if (!input || !input.quizSessionId) {
+        return leaderboard;
+    }
+
+    var response = new GlideRecord(
+        "x_1892173_stopwa_0_buzzer_response"
+    );
+
+    // Get responses for the current Quiz Session
+    response.addQuery(
+        "quiz_session",
+        input.quizSessionId
+    );
+
+    // Ignore responses where timing was not calculated
+    response.addNotNullQuery("response_time");
+
+    // Ignore invalid zero response times
+    response.addQuery(
+        "response_time",
+        ">",
+        "0"
+    );
+
+    // Fastest response first
+    response.orderBy("response_time");
+
+    response.query();
+
+    while (response.next()) {
+
+        leaderboard.push({
+            participantName: response.getDisplayValue("participant"),
+            responseTime: response.getValue("response_time"),
+            buzzerTime: response.getDisplayValue("buzzer_time"),
+            runNumber: response.getValue("run_number")
+        });
+    }
+
+    return leaderboard;
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-08 14:46:15</sys_created_on>
+        <sys_id>fb568535933b8fd04fc379befaba10c5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>QuizPulse - Get Leaderboard</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_fb568535933b8fd04fc379befaba10c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-08 15:09:16</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=fb568535933b8fd04fc379befaba10c5"/>
+</record_update>
