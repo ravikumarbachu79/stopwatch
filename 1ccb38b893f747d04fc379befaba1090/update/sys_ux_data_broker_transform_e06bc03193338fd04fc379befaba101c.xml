@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_1892173_stopwa_0.QuizPulse - Set Run Start Time</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description>Sets the Quiz Session run start time when the host starts the quiz.</description>
+        <mutates_server_data>true</mutates_server_data>
+        <name>QuizPulse - Set Run Start Time</name>
+        <output_schema/>
+        <private>false</private>
+        <props>[&#13;
+  {&#13;
+    "name": "quizSessionId",&#13;
+    "label": "Quiz Session ID",&#13;
+    "description": "Quiz Session sys_id",&#13;
+    "readOnly": false,&#13;
+    "fieldType": "string",&#13;
+    "mandatory": true,&#13;
+    "defaultValue": ""&#13;
+  }&#13;
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+
+    if (!input.quizSessionId) {
+        return {
+            success: false,
+            message: "Quiz Session ID is required."
+        };
+    }
+
+    var session = new GlideRecord("x_1892173_stopwa_0_quiz_session");
+
+    if (!session.get(input.quizSessionId)) {
+        return {
+            success: false,
+            message: "Quiz Session not found."
+        };
+    }
+
+    var startTime = new GlideDateTime();
+
+    session.setValue("run_start_time", startTime.getValue());
+
+    var updated = session.update();
+
+    return {
+        success: !!updated,
+        runStartTime: startTime.getValue(),
+        sys_id: updated || ""
+    };
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-08 10:28:01</sys_created_on>
+        <sys_id>e06bc03193338fd04fc379befaba101c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>QuizPulse - Set Run Start Time</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_e06bc03193338fd04fc379befaba101c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-08 10:28:01</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=e06bc03193338fd04fc379befaba101c"/>
+</record_update>

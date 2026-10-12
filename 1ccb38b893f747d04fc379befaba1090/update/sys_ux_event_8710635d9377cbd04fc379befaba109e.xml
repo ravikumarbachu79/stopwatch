@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>PARTICIPANT_CREATED</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>PARTICIPANT_CREATED</label>
+        <props>[
+    {
+        "fieldType": "string",
+        "id": "CLKsx47HKA0Sn43JEOAVfpT3mY",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "participantId",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    },
+    {
+        "fieldType": "string",
+        "id": "VJHVM4747tB0nQ9UMF7ogBJOFs",
+        "interfaceApiName": "",
+        "label": "",
+        "mandatory": false,
+        "name": "code",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    }
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 12:52:06</sys_created_on>
+        <sys_id>8710635d9377cbd04fc379befaba109e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>PARTICIPANT_CREATED</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_event_8710635d9377cbd04fc379befaba109e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 12:54:31</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="delete_multiple" query="documentkey=8710635d9377cbd04fc379befaba109e"/>
+</record_update>

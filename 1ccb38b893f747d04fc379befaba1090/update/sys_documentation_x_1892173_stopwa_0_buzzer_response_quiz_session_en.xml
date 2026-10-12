@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="quiz_session" label="Quiz Session" language="en" table="x_1892173_stopwa_0_buzzer_response">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>quiz_session</element>
+            <help/>
+            <hint/>
+            <label>Quiz Session</label>
+            <language>en</language>
+            <name>x_1892173_stopwa_0_buzzer_response</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-07 05:10:31</sys_created_on>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_name>Quiz Session</sys_name>
+            <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+            <sys_update_name>sys_documentation_x_1892173_stopwa_0_buzzer_response_quiz_session_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-07 05:10:35</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

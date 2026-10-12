@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2026-10-05 13:24:45</sys_created_on>
+        <sys_id>d95711b893fb47d04fc379befaba1085</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x.1892173.stopwatch-experience.*.canvas_user</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_security_acl display_value="x.1892173.stopwatch-experience.*">1d57dd7893fb47d04fc379befaba1070</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_d95711b893fb47d04fc379befaba1085</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-05 13:24:45</sys_updated_on>
+        <sys_user_role display_value="canvas_user" name="canvas_user">8536f54bc713330072b211d4d8c26080</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

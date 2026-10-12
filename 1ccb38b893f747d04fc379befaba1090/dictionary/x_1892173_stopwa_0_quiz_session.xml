@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="c10c2a8d93bb0bd04fc379befaba1032" label="Quiz Session" max_length="40" name="x_1892173_stopwa_0_quiz_session" type="collection">
+        <element label="Run Start Time" max_length="40" name="run_start_time" type="glide_date_time"/>
+        <element label="Join Code" max_length="10" name="join_code" type="string"/>
+        <element display="true" label="Session Name" max_length="100" name="session_name" type="string"/>
+        <element choice="3" default="waiting" label="Status" max_length="255" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Running" sequence="1" value="running"/>
+                <element inactive_on_update="false" label="Ended" sequence="2" value="ended"/>
+                <element inactive_on_update="false" label="Waiting" sequence="0" value="waiting"/>
+            </choice>
+        </element>
+    </element>
+</database>

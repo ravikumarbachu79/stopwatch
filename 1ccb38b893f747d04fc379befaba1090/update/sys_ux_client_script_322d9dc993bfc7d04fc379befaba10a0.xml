@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Stopwatch Home default">1cbd1538933f47d04fc379befaba103d</macroponent>
+        <name>Resume Stopwatch</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[function handler({api, event, helpers, imports}) {
+
+    if (api.state.isRunning) {
+        return;
+    }
+
+    const elapsedBeforePause = api.state.elapsedTime;
+
+    const parts = elapsedBeforePause.split(':');
+    const hours = Number(parts[0]);
+    const minutes = Number(parts[1]);
+    const secondsParts = parts[2].split('.');
+    const seconds = Number(secondsParts[0]);
+    const milliseconds = Number(secondsParts[1]);
+
+    const previousElapsed =
+        (hours * 3600000) +
+        (minutes * 60000) +
+        (seconds * 1000) +
+        milliseconds;
+
+    const startTime = Date.now() - previousElapsed;
+
+    api.setState('isRunning', true);
+
+    const intervalId = helpers.timing.setInterval(() => {
+
+        const elapsed = Date.now() - startTime;
+
+        const hours = Math.floor(elapsed / 3600000);
+        const minutes = Math.floor((elapsed % 3600000) / 60000);
+        const seconds = Math.floor((elapsed % 60000) / 1000);
+        const milliseconds = elapsed % 1000;
+
+        const display =
+            String(hours).padStart(2, '0') + ':' +
+            String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0') + '.' +
+            String(milliseconds).padStart(3, '0');
+
+        api.setState('elapsedTime', display);
+
+    }, 10);
+
+    api.setState('intervalId', intervalId);
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-06 10:34:38</sys_created_on>
+        <sys_id>322d9dc993bfc7d04fc379befaba10a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Resume Stopwatch</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_client_script_322d9dc993bfc7d04fc379befaba10a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-06 10:34:38</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

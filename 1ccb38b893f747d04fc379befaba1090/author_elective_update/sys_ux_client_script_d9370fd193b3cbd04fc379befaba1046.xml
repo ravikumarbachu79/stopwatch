@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="DELETE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Join Quiz default">86f5969193fb8bd04fc379befaba101b</macroponent>
+        <name>Debug Participant Payload</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[function handler({event}) {
+    console.log("PARTICIPANT CREATE PAYLOAD:", JSON.stringify(event.payload, null, 2));
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 11:03:04</sys_created_on>
+        <sys_id>d9370fd193b3cbd04fc379befaba1046</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Debug Participant Payload</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_client_script_d9370fd193b3cbd04fc379befaba1046</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 11:03:04</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</application>
+        <file_path/>
+        <instance_id>98a10779eb590f50c040fddacad0cda4</instance_id>
+        <instance_name>dev400049</instance_name>
+        <name>sys_ux_client_script_d9370fd193b3cbd04fc379befaba1046</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ux_client_script"&gt;&lt;sys_ux_client_script action="INSERT_OR_UPDATE"&gt;&lt;controller_preset/&gt;&lt;includes/&gt;&lt;macroponent display_value="Join Quiz default"&gt;86f5969193fb8bd04fc379befaba101b&lt;/macroponent&gt;&lt;name&gt;Debug Participant Payload&lt;/name&gt;&lt;preset/&gt;&lt;required_translations&gt;[]&lt;/required_translations&gt;&lt;script&gt;&lt;![CDATA[function handler({event}) {
+    console.log("PARTICIPANT CREATE PAYLOAD:", JSON.stringify(event.payload, null, 2));
+}]]&gt;&lt;/script&gt;&lt;script_api_version&gt;2.0.0&lt;/script_api_version&gt;&lt;sys_class_name&gt;sys_ux_client_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-07 11:03:04&lt;/sys_created_on&gt;&lt;sys_id&gt;d9370fd193b3cbd04fc379befaba1046&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Debug Participant Payload&lt;/sys_name&gt;&lt;sys_package display_value="Stopwatch" source="x_1892173_stopwa_0"&gt;1ccb38b893f747d04fc379befaba1090&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Stopwatch"&gt;1ccb38b893f747d04fc379befaba1090&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ux_client_script_d9370fd193b3cbd04fc379befaba1046&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-07 11:03:04&lt;/sys_updated_on&gt;&lt;target&gt;macroponent&lt;/target&gt;&lt;type&gt;default&lt;/type&gt;&lt;/sys_ux_client_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1075322274</payload_hash>
+        <record_name>Debug Participant Payload</record_name>
+        <reverted_from/>
+        <source>dd2cc13093bb47d04fc379befaba1075</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 11:03:04</sys_created_on>
+        <sys_id>6d1acfd993b3cbd04fc379befaba1030</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a11607fd960000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 11:03:04</sys_updated_on>
+        <type>UX Client Script</type>
+        <update_guid>2d1acfd99fb3cbd0271606269db0832f</update_guid>
+        <update_guid_history>2d1acfd99fb3cbd0271606269db0832f:-1075322274</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-07 11:16:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_client_script">sys_ux_client_script</sys_db_object>
+        <sys_id>0bc2b50167a149f8826b5bad0f5f3690</sys_id>
+        <sys_metadata>d9370fd193b3cbd04fc379befaba1046</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Debug Participant Payload</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_scope_delete display_value="">13b1f873bcaa449e827dfd3b54d19dc9</sys_scope_delete>
+        <sys_update_name>sys_ux_client_script_d9370fd193b3cbd04fc379befaba1046</sys_update_name>
+        <sys_update_version display_value="sys_ux_client_script_d9370fd193b3cbd04fc379befaba1046">6d1acfd993b3cbd04fc379befaba1030</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-07 11:16:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

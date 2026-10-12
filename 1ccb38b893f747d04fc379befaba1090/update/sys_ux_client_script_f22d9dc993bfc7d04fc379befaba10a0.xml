@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Stopwatch Home default">1cbd1538933f47d04fc379befaba103d</macroponent>
+        <name>Lap Stopwatch</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[function handler({api, event, helpers, imports}) {
+
+    // Get the current lap list
+    const laps = api.state.lapTimes || [];
+
+    // Get the current stopwatch time
+    const currentTime = api.state.elapsedTime;
+
+    // Create the new lap
+    const newLap = {
+        lap: laps.length + 1,
+        time: currentTime
+    };
+
+    // Add the new lap to the existing list
+    const updatedLaps = [...laps, newLap];
+
+    // Save the updated lap list
+    api.setState('lapTimes', updatedLaps);
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-06 10:44:44</sys_created_on>
+        <sys_id>f22d9dc993bfc7d04fc379befaba10a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lap Stopwatch</sys_name>
+        <sys_package display_value="Stopwatch" source="x_1892173_stopwa_0">1ccb38b893f747d04fc379befaba1090</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stopwatch">1ccb38b893f747d04fc379befaba1090</sys_scope>
+        <sys_update_name>sys_ux_client_script_f22d9dc993bfc7d04fc379befaba10a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-06 10:44:44</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>
